@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Rubik:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+
+  --regular-typeface: 'Rubik', sans-serif;
+  --accent-typeface: 'Noto Serif', serif;
+
+  --main-color: #111;
+  --secondary-color: #245;
+  --accent-color: rgb(19, 129, 255);
+  --back-color: #fff;
+  --panel-color: #f4eed8;
+}
+
+body {
+  font-family: var(--regular-typeface);
+  font-style: normal;
+  font-weight: 400;
+
+  color: var(--main-color);
+  background-color: var(--back-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--accent-typaface);
+  font-weight: 700;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+
+  background-color: var(--panel-color);
+}
+
+.header_container {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+nav a {
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 25px;
+  padding: 16px 0;
+  color: var(--secondary-color);
+}
+
+nav a[active] {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+main {
+  padding-top: 90px;
+  min-height: 100vh;
+  background-image: linear-gradient(#ffffffaa, #999999aa);
+}
+
+.container {
+  padding: 25px;
+  margin: 0 auto;
+  width: calc(100% - 42px);
+  max-width: 1280px;
+  min-height: 80vh;
+  text-align: center;
+  background-color: var(--back-color);
+  border-radius: 16px;
+}
