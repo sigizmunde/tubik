@@ -1,6 +1,10 @@
 var player;
 
-window.onYouTubeIframeAPIReady = function () {
+document.addEventListener('DOMContentLoaded',
+  () => console.log(YT)
+);
+
+function onYouTubeIframeAPIReady() {
   console.log(YT);
   player = new YT.Player('ytplayer', {
     events: {
