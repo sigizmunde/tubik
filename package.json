@@ -1,28 +1,40 @@
 {
   "name": "tubik",
-  "version": "1.1.0",
-  "description": "",
-  "main": "index.js",
-  "homepage": "https://sigizmunde.github.io/tubik",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-youtube": "^10.1.0",
+    "sass": "^1.69.4",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /tubik/"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sigizmunde/tubik.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "keywords": [],
-  "author": "Illya Bondar <illya.bondar.ukraine@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sigizmunde/tubik/issues"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-handlebars-precompile": "^1.0.2",
-    "parcel-plugin-nuke-dist": "^1.0.1",
-    "posthtml-include": "^1.6.2",
-    "sass": "^1.32.8"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
