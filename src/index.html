@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="./css/modern-normalize.css" />
   <link rel="stylesheet" href="./css/style.scss" />
   <title>tubik</title>
+  <!-- This code loads the iFrame Player API code asynchronously.-->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- This is the source of the Javscript for the demo -->
+  <script src="./js/demo.js"></script>
 </head>
 
 <body>
@@ -22,9 +26,7 @@
   <main>
     <div class="container">
       <div class="container-video animated-grain">
-        <iframe id="ytplayer" width="100%" height="100%"
-          src="https://www.youtube.com/embed/ygzl_rW0MKQ?si=JRCwalwSG_4DU0CO&amp;controls=0&amp;autoplay=1&amp;enablejsapi=1"
-          frameborder="0"></iframe>
+        <div id="player"></div>
       </div>
       <div class="container-tv">
         <img src="./images/tv1.png" />
@@ -33,7 +35,6 @@
         <img src="./images/foreplane1.png" />
       </div>
     </div>
-    <script src="./js/main.js"></script>
   </main>
 </body>
 
