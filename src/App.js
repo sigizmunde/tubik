@@ -1,14 +1,17 @@
 import YouTube from 'react-youtube';
 import './App.scss';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import useScreenSize from './utils/useScreenSize';
 
 function App() {
 
   const playerRef = useRef();
+  const [playTime, setPlayTime] = useState();
+  const { height: clientHeight } = useScreenSize();
 
   const opts = {
     width: '100%',
-    height: '500vh',
+    height: `${clientHeight / 2}px`,
     playerVars: {
       'autoplay': 1,
       'controls': 0
@@ -32,6 +35,22 @@ function App() {
     }
   }
 
+  function getTime() {
+    if (!!playerRef.current) {
+      setPlayTime(playerRef.current.getMediaReferenceTime());
+    }
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      getTime();
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    }
+  })
+
   return (
     <div className="App">
       <header>
@@ -39,13 +58,14 @@ function App() {
           <nav>
             <a href="./index.html" active="true">home</a><a href="./index.html">about</a><a href="./index.html">contacts</a>
           </nav>
+          <div className="playtime">{playTime}</div>
           <div className="userauth">no user</div>
         </div>
       </header>
       <main>
         <div className="container">
           <div className="container-video animated-grain">
-            <YouTube videoId="07wjiNny3W8" opts={opts} onReady={onReady} />
+            <YouTube videoId="3ehWXsLtPoY" opts={opts} onReady={onReady} />
           </div>
           <div className="container-tv">
             <img src="images/tv1.png" alt="decoration element" />
